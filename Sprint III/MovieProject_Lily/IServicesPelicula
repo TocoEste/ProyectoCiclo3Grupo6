@@ -1,0 +1,10 @@
+using System.Collections.Generic;
+using ProyecPelinn.Shared.Entity;
+
+namespace ProyecPelinn.Client.Services
+{
+    public interface IServicesPelicula
+    {
+         List <Pelicula> GetPelicula();
+    }
+}
