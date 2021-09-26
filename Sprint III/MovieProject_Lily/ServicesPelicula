@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using ProyecPelinn.Shared.Entity;
+
+namespace ProyecPelinn.Client.Services
+{
+    public class ServicesPelicula: IServicesPelicula
+    {
+        public List<Pelicula>GetPelicula(){
+            return new List<Pelicula>(){
+                new Pelicula(){PeliculaNombre="Amor Eterno", PeliculaSinopsis="", PeliculaImagen="/images/Amor.jpg", PeliculaGenero="Romance", PeliculaStore = 10, Premier=new DateTime(2014,02,14)},
+                new Pelicula(){PeliculaNombre="Aquel Verano", PeliculaSinopsis="", PeliculaImagen="/images/Aquel.jpg", PeliculaGenero="Romance", PeliculaStore = 10, Premier=new DateTime(2021,07,09)},
+                new Pelicula(){PeliculaNombre="El Secreto de Adaline", PeliculaSinopsis="", PeliculaImagen="/images/secreto.jpg", PeliculaGenero="Romance", PeliculaStore = 10, Premier=new DateTime(2015,04,30)},
+                new Pelicula(){PeliculaNombre="Hampstead una Cita en el parque", PeliculaSinopsis="", PeliculaImagen="/images/life.jpg", PeliculaGenero="Romance", PeliculaStore = 10, Premier=new DateTime(2017,06,23)},
+                new Pelicula(){PeliculaNombre="El stand de los besos 3", PeliculaSinopsis="", PeliculaImagen="/images/primer.jpg", PeliculaGenero="Romance", PeliculaStore = 10, Premier=new DateTime(2021,08,11)},
+                new Pelicula(){PeliculaNombre="Nosotros en la Noche", PeliculaSinopsis="", PeliculaImagen="/images/Nosotros.jpg", PeliculaGenero="Romance", PeliculaStore = 10, Premier=new DateTime(2017,09,01)},
+                new Pelicula(){PeliculaNombre="Querido John", PeliculaSinopsis="", PeliculaImagen="/images/Querido.jpg", PeliculaGenero="Romance", PeliculaStore = 10, Premier=new DateTime(2010,04,23)},
+                new Pelicula(){PeliculaNombre="Un Reino Unido", PeliculaSinopsis="", PeliculaImagen="/images/reino.jpg", PeliculaGenero="Romance", PeliculaStore = 10, Premier=new DateTime(2016,09,09)},
+                new Pelicula(){PeliculaNombre="Votos de Amor", PeliculaSinopsis="", PeliculaImagen="/images/Votos.jpg", PeliculaGenero="Romance", PeliculaStore = 10, Premier=new DateTime(2012,02,06)},
+                new Pelicula(){PeliculaNombre="Cincuenta sombras más oscuras", PeliculaSinopsis="", PeliculaImagen="/images/cincuenta.jpg", PeliculaGenero="Romance", PeliculaStore = 10, Premier=new DateTime(2017,02,10)},
+                new Pelicula(){PeliculaNombre="La Magia de la Isla", PeliculaSinopsis="", PeliculaImagen="/images/magia", PeliculaGenero="Romance", PeliculaStore= 8, Premier=new DateTime(2021,04,16)},
+                new Pelicula(){PeliculaNombre="Yo antes de ti", PeliculaSinopsis="", PeliculaImagen="/images/Antes.jpg", PeliculaGenero="Romance", PeliculaStore = 10, Premier=new DateTime(2016,06,03)}
+            };
+        }
+    }
+}
