@@ -1,0 +1,12 @@
+using System;
+namespace ProyecPelinn.Shared.Entity{
+    public class Pelicula{
+        public string PeliculaNombre {get;set;}
+        public string PeliculaSinopsis {get;set;}
+        public string PeliculaImagen {get;set;}
+        public string PeliculaGenero {get;set;}
+        public int PeliculaStore {get;set;}
+        public DateTime Premier {get;set;}
+    }
+
+}
