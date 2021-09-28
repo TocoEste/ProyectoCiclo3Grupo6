@@ -1,1 +1,47 @@
 
+<div class="card">
+
+       
+
+           <div class="card">
+               
+               <div class="row g-0 bg-light position-relative ps-md-0 mb-2">
+
+                   <div class="col-md-3 p-4 ps-md-0">
+
+                       <img src="@Movie1.Imagen" class="img-fluid" width="300" height="300">
+
+                       <div class="card-body">
+                           <h3 class="text-center"  style="color:darkorange" >Sinopsys</h3>
+                           <p class="text-center">@Movie1.Sinopsys</p>
+                       </div>
+                   </div>
+
+               <div>
+                   <br>                
+                   <h4 class="text-center" >Nombre de pelicula</h4>
+                            <h3 class="text-center" style="color:darkorange">@Movie1.Nombre</h3>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Genero:  <em style="color:darkorange">@Movie1.Genero</em></h4>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Idioma:  <em style="color:darkorange">@Movie1.Idioma</em></h4>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Duracion:  <em style="color:darkorange">@Movie1.Duracion</em></h4>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Director:  <em style="color:darkorange">@Movie1.Director</em></h4>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Reparto:  </h4>
+                            <em class="text-center" style="color:darkorange">@Movie1.Reparto</em>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Estreno</h4>
+                            <p class="text-center" style="color:darkorange">@Movie1.Estreno</p>
+                   <br>
+                   <h4 class="text-center">Calificacion:  <em class="text-center" style="color:darkorange">@Movie1.Calificacion</em></h4>
+                   <br>
+                   <div class="text-center">
+                       <a href="https://youtu.be/3irrb13bOq0" class="btn btn-primary" role="button" data-bs-toggle="button">Ver trailer</a>
+                   </div>
+               </div>
+               </div>
+           
+        </div>
