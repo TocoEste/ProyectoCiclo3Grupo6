@@ -1,0 +1,36 @@
+@page "/movies/create"
+@inject NavigationManager navigationManager
+@using PelisTic.Client.Pages.Components
+
+<FormMovie Pelicula="Pelicula" OnValidSubmit="Create" CategoriasNoSeleccionadas="CategoriasNoSeleccionadas"></FormMovie>
+@code {
+    private Pelicula Pelicula = new Pelicula();
+    private List<Category> CategoriasNoSeleccionadas = new List<Category>();
+
+    protected override void OnInitialized()
+    {
+        CategoriasNoSeleccionadas = new List<Category>(){
+new Category(){Id = 1, Name="Acción"},
+new Category(){Id = 2, Name="Ciencia ficción"},
+new Category(){Id = 3, Name="Comedia"},
+new Category(){Id = 4, Name="Documental"},
+new Category(){Id = 5, Name="Drama"},
+new Category(){Id = 6, Name="Musical"},
+new Category(){Id = 7, Name="Romance"},
+new Category(){Id = 8, Name="Suspenso"},
+new Category(){Id = 9, Name="Terror"}
+};
+    }
+    void Create()
+    {
+        @* Con el navigationManager vamos a redireccionar al usuario a otras rutas dentro del sistema *@
+        Console.WriteLine(navigationManager.Uri);
+        navigationManager.NavigateTo("pelicula");
+        Console.WriteLine($"Pelicula: {Pelicula.PeliculaNombre}");
+        Console.WriteLine($"Premier: {Pelicula.Premier}");
+        Console.WriteLine($"Esta en cartelera: {Pelicula.EnCartelera}");
+        Console.WriteLine($"Sinopsis: {Pelicula.PeliculaSinopsis}");
+        Console.WriteLine($"Poster: {Pelicula.PeliculaImagen}");
+
+    }
+}

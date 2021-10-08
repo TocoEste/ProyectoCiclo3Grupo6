@@ -1,0 +1,5 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\ProyCicloIII\Peliculas\ProyectoCiclo3Grupo6\PelisTic\Client\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\ProyCicloIII\Peliculas\ProyectoCiclo3Grupo6\PelisTic\Client\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="/" Path="C:\ProyCicloIII\Peliculas\ProyectoCiclo3Grupo6\PelisTic\Client\wwwroot\" />
+</StaticWebAssets>

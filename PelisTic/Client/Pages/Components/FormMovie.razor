@@ -1,0 +1,95 @@
+@using PelisTic.Client.Pages.Components
+@using PelisTic.Client.Model
+<EditForm Model="Pelicula" OnValidSubmit="OnValidSubmit">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+
+    <div class="container">
+        <div class="jumbotron">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col col-sm-9">
+                        @* Input para ingresar el nombre de la pelicula *@
+                        <InputText class="form-control" @bind-Value="@Pelicula.PeliculaNombre"></InputText>
+                        <ValidationMessage For="@(()=>Pelicula.PeliculaNombre)"></ValidationMessage>
+                    </div>
+                    <div class="col col-sm-3">
+                        @* Checkbox para definir si esta o no en cartelera *@
+                        <InputCheckbox id="en_cartelera" class="form-check-input" @bind-Value="@Pelicula.EnCartelera">
+                        </InputCheckbox>
+                        <label class="form-check-label" for="en_cartelera">En cartelera</label>
+                        <ValidationMessage For="@(()=>Pelicula.EnCartelera)"></ValidationMessage>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        @* Input para ingresar el trailer *@
+                        <InputText class="form-control" @bind-Value="@Pelicula.Trailer"></InputText>
+                        <ValidationMessage For="@(()=>Pelicula.Trailer)"></ValidationMessage>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            @* Fecha de lanzamiento*@
+                            <InputDate class="form-control" @bind-Value="@Pelicula.Premier"></InputDate>
+                            <ValidationMessage For="@(()=>Pelicula.Premier)"></ValidationMessage>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* Sinopsis de la pelicula... descripción *@
+            <div class="form-group">
+                <InputTextArea class="form-control" @bind-Value="@Pelicula.PeliculaSinopsis"></InputTextArea>
+                <ValidationMessage For="@(()=>Pelicula.PeliculaSinopsis)"></ValidationMessage>
+            </div>
+            @* Selección de categorías *@
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <label>Selecciona las categorías</label>
+                        <div>
+                            <SelectorMultiple Seleccionados="Seleccionados" NoSeleccionados="NoSeleccionados">
+                            </SelectorMultiple>
+                        </div>
+                    </div>
+                    <div class="col">
+                        @* Poster => Imagen de la pelicula *@
+                        <div class="form-group">
+                            <ImageComponent Label="" ImageSelected="ImageSelected" ImageURL=""></ImageComponent>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">Aceptar</button>
+            <button type="submit" class="btn btn-danger">Cancelar</button>
+
+        </div>
+    </div>
+</EditForm>
+@code {
+    [Parameter] public Pelicula Pelicula { get; set; }
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+    [Parameter] public List<Category> CategoriasSeleccionadas { get; set; } = new List<Category>();
+    [Parameter] public List<Category> CategoriasNoSeleccionadas { get; set; } = new List<Category>();
+
+    private string posterTemporal;
+    private List<SelectorMultipleModel> NoSeleccionados { get; set; } = new List<SelectorMultipleModel>();
+
+    private List<SelectorMultipleModel> Seleccionados { get; set; } = new List<SelectorMultipleModel>();
+
+    private void ImageSelected(string imageB64)
+    {
+        Pelicula.PeliculaImagen = imageB64;
+    }
+
+    protected override void OnInitialized()
+    {
+        Seleccionados = CategoriasSeleccionadas.Select(x => new SelectorMultipleModel(x.Id.ToString(), x.Name)).ToList();
+        NoSeleccionados = CategoriasNoSeleccionadas.Select(x => new SelectorMultipleModel(x.Id.ToString(), x.Name)).ToList();
+        if (!string.IsNullOrWhiteSpace(Pelicula.PeliculaImagen))
+        {
+            posterTemporal = Pelicula.PeliculaImagen;
+            Pelicula.PeliculaImagen = null;
+        }
+    }
+}

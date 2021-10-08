@@ -1,0 +1,26 @@
+@page "/movies/edit/{Id:int}"
+@using PelisTic.Client.Pages.Components
+
+<FormMovie Pelicula="Pelicula" OnValidSubmit="Edit"></FormMovie>
+@code {
+    [Parameter] public int Id { get; set; }
+    private Pelicula Pelicula;
+    protected override void OnInitialized()
+    {
+        Pelicula = new Pelicula()
+        {
+            PeliculaNombre = "Votos de Amor",
+            EnCartelera = true,
+            PeliculaSinopsis = "Sinopsis...",
+            Trailer = "Trailer"
+        };
+    }
+    void Edit()
+    {
+        Console.WriteLine($"Pelicula: {Pelicula.PeliculaNombre}");
+        Console.WriteLine($"Premier: {Pelicula.Premier}");
+        Console.WriteLine($"Esta en cartelera: {Pelicula.EnCartelera}");
+        Console.WriteLine($"Poster: {Pelicula.PeliculaImagen}");        
+        Console.WriteLine($"Sinopsis: {Pelicula.PeliculaSinopsis}");
+    }
+}

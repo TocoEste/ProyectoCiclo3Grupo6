@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="jumbotron">
+        <EditForm Model="Actor" OnValidSubmit="OnValidSubmit">
+            <DataAnnotationsValidator></DataAnnotationsValidator>
+            <div class="mb-3">
+                <label for="" class="form-floating">Nombre Actor</label>
+                <InputText class="form-control" @bind-Value="@Actor.ActorName" placeholder="Actor"></InputText>
+                <ValidationMessage For="@(()=>Actor.ActorName)"></ValidationMessage>
+            </div>
+            <div class="form-group row mb-3">
+                <div class="col-sm-4">
+                    <label for="FechaNacimiento" class="form-floating">Fecha de Nacimiento</label>
+                    <InputDate class="form-control" @bind-Value="@Actor.BirthDate"></InputDate>
+                    <ValidationMessage For="@(()=>Actor.BirthDate)"></ValidationMessage>
+                </div>
+            
+                <div class="col-sm-4">
+                    <div class="form-group mb-2">
+                        <label for="Gender" class="form-floating">Genero</label>
+                        <select class="form-control" aria-label=".form-select-sm example">
+                            <option value="0">Seleccione un genero</option>
+                            <option value="1">Femenino</option>
+                            <option value="2">Masculino</option>                        
+                        </select>                        
+                    </div>                    
+                </div>
+                <div class="col-sm-4">
+                    <label for="Nominaciones" class="form-floating">Nominaciones</label>
+                    <InputNumber class="form-control" @bind-Value="@Actor.Nominations"></InputNumber>
+                    
+                </div>
+
+                              
+            </div>
+           
+            <div class="mb-3">
+                <label for="biografia" class="form-label">Biografia</label>
+                <InputTextArea class="form-control" @bind-Value="@Actor.Biography" placeholder="Escriba la biografia" id="biografia"></InputTextArea>               
+            </div>
+
+            <div class="form-group">                
+                <ImageComponent ImageSelected="ImageSelected" ImageURL="@imageURL"></ImageComponent>
+            </div>
+            
+            <div class="form-group"></div>
+            <button type="submit" class="btn btn-success">Guardar</button>
+        </EditForm>
+    </div>
+
+</div>
+
+@code {
+
+    
+    string imageURL;
+    [Parameter] public Actor Actor { get; set; }
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+
+    protected override void OnInitialized()
+    {
+        if (!string.IsNullOrEmpty(Actor.Photo))
+        {
+            imageURL = Actor.Photo;
+            Actor.Photo = null;
+        }
+    }
+
+    private void ImageSelected(string imageB64)
+    {
+        Actor.Photo = imageB64;
+        imageURL = null;
+    }
+
+}

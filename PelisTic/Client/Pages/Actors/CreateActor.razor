@@ -1,0 +1,16 @@
+@page "/actors/create"
+@using PelisTic.Client.Pages.Components
+<FormActor OnValidSubmit="Create" Actor="Actor"></FormActor>
+@code{
+    private Actor Actor = new Actor();
+    void Create(){
+        
+        Console.WriteLine($"Nombre del actor: {Actor.ActorName}");
+        Console.WriteLine($"Fecha de Naciminento: {Actor.BirthDate}");
+        Console.WriteLine($"Genero: {Actor.Gender}");
+        Console.WriteLine($"Nominaciones: {Actor.Nominations}");
+        Console.WriteLine($"Biografia: {Actor.Biography}");
+        Console.WriteLine($"Imagen: {Actor.Photo}");
+        
+    }
+}

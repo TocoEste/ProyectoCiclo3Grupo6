@@ -1,0 +1,125 @@
+@page "/movies/search"
+@using PelisTic.Client.Pages.Components
+@inject IServicesPelicula pelicula
+
+<div class="jumbotron">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="form-group mb-2">
+                    <label for="PeliculaNombre" class="form-floating">Nombre pelicula</label>
+                    <input type="text" @bind-value="PeliculaNombre" @bind-value:event="oninput"
+                        @onkeypress="@((KeyboardEventArgs e)=>MovieNameKeyPress(e))" class="form-control"
+                        id="PeliculaNombre" placeholder="Buscar pelicula" />
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group mb-2">
+                    <label for="PeliculaNombre" class="form-floating">Categoria</label>
+                    <select class="form-control" @bind="categorySelected">
+                        <option value="0">Seleccione una categoría</option>
+                        <option value="1">Acción</option>
+                        <option value="2">Ciencia ficción</option>
+                        <option value="3">Comedia</option>
+                        <option value="4">Documental</option>
+                        <option value="5">Drama</option>
+                        <option value="6">Musical</option>
+                        <option value="7">Romance</option>
+                        <option value="8">Suspenso</option>
+                        <option value="9">Terror</option>
+                        @foreach (var item in categories)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+    <div class="row mb-3 justify-content-md-center">
+        <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <div class="form-check">
+                        <input type="checkbox" aria-label="Checkbox for following text input" id="estrenos"
+                            @bind="futurosEstrenos">
+                        <label class="form-check-label" for="estrenos"><small>Futuros estrenos</small></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <div class="form-check">
+                        <input type="checkbox" aria-label="Checkbox for following text input" id="cartelera"
+                            @bind="enCartelera">
+                        <label class="form-check-label" for="cartelera"><small>En cartelera</small></label>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <div class="form-check">
+                        <input type="checkbox" aria-label="Checkbox for following text input" id="mejor_calificadas"
+                            @bind="mejorCalificadas">
+                        <label class="form-check-label" for="mejor_calificadas"><small>Mejor calificadas</small></label>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-dark mb-2 btn-sm" @onclick="CargarNuevasPeliculas">
+        Buscar
+    </button>
+
+    <button type="button" class="btn btn-danger mb-2 btn-sm" @onclick="LimpiarCampos">
+        Limpiar campos
+    </button>
+</div>
+<PeliculaCardComponent Peliculas="Peliculas"></PeliculaCardComponent>
+
+@code {
+    private List<Pelicula> Peliculas;
+    string PeliculaNombre = "";
+    string categorySelected = "";
+    private bool futurosEstrenos = false;
+    private bool enCartelera = false;
+    private bool mejorCalificadas = false;
+
+    protected override void OnInitialized()
+    {
+        Peliculas = pelicula.GetPelicula();
+    }
+
+    private List<Category> categories = new List<Category>();
+    private void MovieNameKeyPress(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            CargarNuevasPeliculas();
+        }
+    }
+    private void CargarNuevasPeliculas()
+    {
+        Peliculas = pelicula.GetPelicula().Where(x => x.PeliculaNombre.ToLower().Contains(PeliculaNombre.ToLower())).ToList();
+        Console.WriteLine($"Nombre pelicula: {PeliculaNombre}");
+        Console.WriteLine($"Categoría seleccionada: {categorySelected}");
+        Console.WriteLine($"En cartelera {enCartelera}");
+        Console.WriteLine($"Futuros estrenos: {futurosEstrenos}");
+        Console.WriteLine($"Mejor calificada: {mejorCalificadas}");
+    }
+
+    private void LimpiarCampos()
+    {
+        Peliculas = pelicula.GetPelicula();
+        PeliculaNombre = "";
+        categorySelected = "0";
+        futurosEstrenos = false;
+        enCartelera = false;
+        mejorCalificadas = false;
+    }
+}

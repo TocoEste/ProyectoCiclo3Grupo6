@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "PelisTic.Shared/1.0.0": {
+        "runtime": {
+          "PelisTic.Shared.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PelisTic.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

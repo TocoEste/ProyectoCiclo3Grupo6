@@ -1,0 +1,15 @@
+@page "/actors"
+@using PelisTic.Client.Pages.Components
+@inject IServiceActor actor
+<CardActorsComponent Actors ="Actors"></CardActorsComponent>
+<div class="form-group">
+    <a href="actors/create" class="btn btn-info">Crear Actor</a>
+</div>
+
+@code{
+    private List<Actor> Actors;
+    protected override void OnInitialized()
+    {
+       Actors = actor.GetActors();
+    }
+}
