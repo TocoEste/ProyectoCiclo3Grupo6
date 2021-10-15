@@ -1,0 +1,17 @@
+@page "/Actividad5"
+@using MovieProject.Client.Pages.Components
+
+@inject IservicesMovie movie
+<div class="jumbotron">
+    <Componente Movies="Movies"></Componente>
+</div>
+
+
+@code
+{
+private List<Movie> Movies;
+    protected override void OnInitialized(){
+    Movies = movie.GetMovies();
+    }
+
+}

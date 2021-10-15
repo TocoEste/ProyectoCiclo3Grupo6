@@ -1,0 +1,142 @@
+
+@page "/Actividad2"
+
+<h1>En esta actividad Podremos acceder a los atributos de una clase en la creacion de una lista nueva creada en lenguaje C# Movie.cs</h1>
+
+<p>y de esta manera acceder a los datos asignados al objeto creado con los atributos de dicha clase para mostrarlos por pantalla por medio de codigo Html</p>
+
+
+<div class="jumbotron">
+    
+    @* Generamos un card en el cual se mostraran los Atributos de la clase en este caso en general dentro de un card-deck con tres columnas*@
+    
+        
+        <div class="card">
+
+       
+
+           <div class="card">
+               
+               <div class="row g-0 bg-light position-relative ps-md-0 mb-2">
+
+                   <div class="col-md-3 p-4 ps-md-0">
+
+                       <img src="@Movie1.Imagen" class="img-fluid" width="300" height="300">
+
+                       <div class="card-body">
+                           <h3 class="text-center"  style="color:darkorange" >Sinopsys</h3>
+                           <p class="text-center">@Movie1.Sinopsys</p>
+                       </div>
+                   </div>
+
+               <div>
+                   <br>                
+                   <h4 class="text-center" >Nombre de pelicula</h4>
+                            <h3 class="text-center" style="color:darkorange">@Movie1.Nombre</h3>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Genero:  <em style="color:darkorange">@Movie1.Genero</em></h4>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Idioma:  <em style="color:darkorange">@Movie1.Idioma</em></h4>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Duracion:  <em style="color:darkorange">@Movie1.Duracion</em></h4>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Director:  <em style="color:darkorange">@Movie1.Director</em></h4>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Reparto:  </h4>
+                            <em class="text-center" style="color:darkorange">@Movie1.Reparto</em>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Estreno</h4>
+                            <p class="text-center" style="color:darkorange">@Movie1.Estreno</p>
+                   <br>
+                   <h4 class="text-center">Calificacion:  <em class="text-center" style="color:darkorange">@Movie1.Calificacion</em></h4>
+                   <br>
+                   <div class="text-center">
+                       <a href="https://youtu.be/3irrb13bOq0" class="btn btn-primary" role="button" data-bs-toggle="button">Ver trailer</a>
+                   </div>
+               </div>
+               </div>
+           
+        </div>
+
+
+
+        <div class="card">
+
+       
+
+           <div class="card">
+               
+               <div class="row g-0 bg-light position-relative ps-md-0 mb-2">
+
+                   <div class="col-md-3 p-4 ps-md-0">
+
+                       <img src="@Movie1.Imagen" class="img-fluid" width="300" height="300">
+
+                       <div class="card-body">
+                           <h3 class="text-center"  style="color:darkorange" >Sinopsys</h3>
+                           <p class="text-center">@Movie1.Sinopsys</p>
+                       </div>
+                   </div>
+
+               <div>
+                   <br>                
+                   <h4 class="text-center" >Nombre de pelicula</h4>
+                            <h3 class="text-center" style="color:darkorange">@Movie1.Nombre</h3>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Genero:  <em style="color:darkorange">@Movie1.Genero</em></h4>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Idioma:  <em style="color:darkorange">@Movie1.Idioma</em></h4>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Duracion:  <em style="color:darkorange">@Movie1.Duracion</em></h4>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Director:  <em style="color:darkorange">@Movie1.Director</em></h4>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Reparto:  </h4>
+                            <em class="text-center" style="color:darkorange">@Movie1.Reparto</em>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Estreno</h4>
+                            <p class="text-center" style="color:darkorange">@Movie1.Estreno</p>
+                   <br>
+                   <h4 class="text-center">Calificacion:  <em class="text-center" style="color:darkorange">@Movie1.Calificacion</em></h4>
+                   <br>
+                   <div class="text-center">
+                       <a href="https://youtu.be/3irrb13bOq0" class="btn btn-primary" role="button" data-bs-toggle="button">Ver trailer</a>
+                   </div>
+               </div>
+               </div>
+           </div>
+        </div>
+</div>
+</div>
+
+
+
+@code {
+    @* Función private que retorna la información del pez mediante una instancia *@
+
+    private Movie GetMovie()
+        
+        {     
+        @* Este fragmento de código sólo sirve para crear un único objeto de la clase  si queremos crear mas objetos debemos utilizar la funcion for each o for*@
+       
+           return new Movie()
+        {
+             Imagen = "/images/img1.jpg",
+             Nombre ="Tierra de dragones",
+             Genero ="Accion",
+             Idioma ="Espanol",
+             Duracion ="3h 35min",
+             Estreno = new DateTime(2020,20,20),
+             Director ="Charles stone",
+             Reparto ="La pantera rosa, Silvestre stalone, Vin diesel",
+             Calificacion ="5",
+             Sinopsys ="De la tierra d los dragones nace una posible amenaza para la raza humana, asi como tambien para la paz en el mundo de los dragones gracias a esto nace un lazo fraternar entre ambas especies dando paso a una nueva era de paz y armonia."
+        };
+    }
+
+    @* Las propiedades inicializadas en el GetMovie se lo asociamos a una instancia *@
+    public Movie Movie1
+    {
+        get { return GetMovie(); }
+    }
+}

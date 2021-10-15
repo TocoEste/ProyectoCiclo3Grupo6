@@ -1,0 +1,17 @@
+@page "/Actividad6"
+@using MovieProject.Client.Pages.Components
+
+@inject IservicesActor actor
+<div class="jumbotron">
+    <ComponenteActor Actors="Actors"></ComponenteActor>
+</div>
+
+
+@code
+{
+private List<Actor> Actors;
+    protected override void OnInitialized(){
+    Actors = actor.GetActors();
+    }
+
+}

@@ -1,0 +1,67 @@
+﻿@page "/fetchdata"
+
+<div class="jumbotron">
+    @foreach (var Movie in GetMovies())
+    {
+    <div class="list-group mb-3">
+        <div class="row">
+            <div class="col-md3">
+                <img class="img-thumblain" width="200" height="200" src="@Movie.Imagen" alt="">
+            </div>
+            <div class="col-md9"></div>
+            <blockquote class="blockquote text-center">
+
+                Nombre:
+                <p class="mp-0">
+                    <small class="text-muted">@Movie.Nombre</small>
+                </p>
+
+                Genero:
+                <p class="mp-0">
+                    <small class="text-muted">@Movie.Genero</small>
+                </p>
+
+                Duracion:
+                <p class="mp-0">
+                    <small class="text-muted">@Movie.Duracion</small>
+                </p>
+                
+                Sinopsys:
+                <p class="mp-0">
+                    <small class="text-muted">@Movie.Sinopsys</small>
+                </p>
+                
+                Calificacion:
+                <p class="mp-0">
+                    <small class="text-muted">@Movie.Calificacion</small>
+                </p>
+        
+            </blockquote>
+        </div>
+
+    </div>
+    }
+
+</div>
+
+@code {
+    private List<Movie> GetMovies()
+    {
+        return new List<Movie>(){
+new Movie()
+{Nombre = "Nueva Pelicula1", Genero="Accion", Duracion="cinco", Sinopsys="un texto largo", Calificacion="cinco", Imagen="/images/img1.jpg"},
+new Movie()
+{Nombre = "Nueva Pelicula1", Genero="Drama", Duracion="50", Sinopsys="un texto largo", Calificacion="cinco", Imagen="/images/img2.jpg"},
+new Movie()
+{Nombre = "Nueva Pelicula2", Genero="Comedia", Duracion="veinti5", Sinopsys="un texto largo", Calificacion="cinco", Imagen="/images/img3.jpg"},
+new Movie()
+{Nombre = "Nueva Pelicula3", Genero="Infantil", Duracion="dos", Sinopsys="un texto largo", Calificacion="cinco", Imagen="/images/img4.jpg"},
+new Movie()
+{Nombre = "Nueva Pelicula4", Genero="Fantasia", Duracion="cinco", Sinopsys="un texto largo", Calificacion="cinco", Imagen="/images/img5.jpg"},
+new Movie()
+{Nombre = "Nueva Pelicula5", Genero="Terror", Duracion="cinco", Sinopsys="un texto largo", Calificacion="cinco", Imagen="/images/img6.jpg"},
+new Movie()
+{Nombre = "Nueva Pelicula7", Genero="Anime", Duracion="cinco", Sinopsys="un texto largo", Calificacion="cinco", Imagen="/images/img7.jpg"}
+    };
+    }
+}

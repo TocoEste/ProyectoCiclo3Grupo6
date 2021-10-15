@@ -1,0 +1,130 @@
+﻿@page "/Actividad1"
+
+<h1>En esta actividad usamos cards para organizar la informacion de los elementos de una clase</h1>
+
+<p>utilizamos la etiqueta div para para generar las diferentes secciones del codigo donde se ira mostrando la informacion de cada objeto <hr/>
+   poe medio del atributo class en la etiqueta div podemos seleccionar el tipo de contenedor de informacion que necesitamos</p>
+
+
+<div class="jumbotron">
+    @* Fila 1 de cards *@
+    @* Generaremos filas de 3 cards cada una *@
+    <div class="card-deck mb-3">
+        @* Generamos el primer card *@
+        <div class="card">
+            <img class="card-img-top" src="/images/img1.jpg" alt="Card image cap" height="250">
+            <div class="card-body">
+                <h5 class="card-title"><em>@title_card</em></h5>
+                <small class="text-muted">@content_card</small>
+            </div>
+            <footer class="blockquote-footer">
+                <small>@author_card</small>
+            </footer>
+        </div>
+
+        @* Generamos el segundo card *@
+        <div class="card ">
+            <img class="card-img-top" src="/images/img2.jpg" alt="Card image cap" height="250">
+            <div class="card-body">
+                <h5 class="card-title"><em>@title_card</em></h5>
+                <small class="text-muted">@content_card</small>
+            </div>
+            <footer class="blockquote-footer">
+                <small>@author_card</small>
+            </footer>
+        </div>
+
+        @* Generamos el tercer card *@
+        <div class="card ">
+            <img class="card-img-top" src="/images/img3.jpg" alt="Card image cap" height="250">
+            <div class="card-body">
+                <h5 class="card-title"><em>@title_card</em></h5>
+                <small class="text-muted">@content_card</small>
+            </div>
+            <footer class="blockquote-footer">
+                <small>@author_card</small>
+            </footer>
+        </div>
+    </div>
+
+    @* Fila 2 de cards *@
+    @* Generaremos filas de 3 cards cada una *@
+    <div class="card-deck mb-3">
+        @* Generamos el primer card *@
+        <div class="card">
+            <img class="card-img-top" src="/images/img4.jpg" alt="Card image cap" height="250">
+            <div class="card-body">
+                <h5 class="card-title"><em>@title_card</em></h5>
+                <small class="text-muted">@content_card</small>
+            </div>
+            <footer class="blockquote-footer">
+                <small>@author_card</small>
+            </footer>
+        </div>
+
+        @* Generamos el segundo card *@
+        <div class="card ">
+            <img class="card-img-top" src="/images/img5.jpg" alt="Card image cap" height="250">
+            <div class="card-body">
+                <h5 class="card-title"><em>@title_card</em></h5>
+                <small class="text-muted">@content_card</small>
+            </div>
+            <footer class="blockquote-footer">
+                <small>@author_card</small>
+            </footer>
+        </div>
+
+        @* Generamos el tercer card *@
+        <div class="card ">
+            <img class="card-img-top" src="/images/img6.jpg" alt="Card image cap" height="250">
+            <div class="card-body">
+                <h5 class="card-title"><em>@title_card</em></h5>
+                <small class="text-muted">@content_card</small>
+            </div>
+            <footer class="blockquote-footer">
+                <small>@author_card</small>
+            </footer>
+        </div>
+        <div class="card ">
+            <img class="card-img-top" src="/images/img7.jpg" alt="Card image cap" height="250">
+            <div class="card-body">
+                <h5 class="card-title"><em>@title_card</em></h5>
+                <small class="text-muted">@content_card</small>
+            </div>
+            <footer class="blockquote-footer">
+                <small>@author_card</small>
+            </footer>
+        </div>
+    </div>
+</div>
+
+@*Esta etiqueta div nos permite navegar entre ppaginas por medio de botones bicados en la parte inferios den navegador*@
+<div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+@code {
+    @* Crear dos variables para el titulo y la descripción del card *@
+    public string title_card = "Movie Type";
+    public string content_card = "Synopsis";
+    public string author_card = "******";
+}

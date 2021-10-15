@@ -1,0 +1,84 @@
+@using MovieProject.Shared
+@page "/Actividad3"
+
+<div class="jumbotron">
+    @foreach (var Movie in GetMovies())
+    {
+    <div class="card">
+
+       
+
+           <div class="card">
+               
+               <div class="row g-0 bg-light position-relative ps-md-0 mb-2">
+
+                   <div class="col-md-3 p-4 ps-md-0">
+
+                       <img src="@Movie.Imagen" class="img-fluid" width="300" height="300">
+
+                       <div class="card-body">
+                           <h3 class="text-center"  style="color:darkorange" >Sinopsys</h3>
+                           <p class="text-center">@Movie.Sinopsys</p>
+                       </div>
+                   </div>
+
+               <div>
+                   <br>                
+                   <h4 class="text-center" >Nombre de pelicula</h4>
+                            <h3 class="text-center" style="color:darkorange">@Movie.Nombre</h3>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Genero:  <em style="color:darkorange">@Movie.Genero</em></h4>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Idioma:  <em style="color:darkorange">@Movie.Idioma</em></h4>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Duracion:  <em style="color:darkorange">@Movie.Duracion</em></h4>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Director:  <em style="color:darkorange">@Movie.Director</em></h4>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Reparto:  </h4>
+                            <em class="text-center" style="color:darkorange">@Movie.Reparto</em>
+                            <p class="text-center">____</p>
+                   <h4 class="text-center" >Estreno</h4>
+                            <p class="text-center" style="color:darkorange">@Movie.Estreno</p>
+                   <br>
+                   <h4 class="text-center">Calificacion:  <em class="text-center" style="color:darkorange">@Movie.Calificacion</em></h4>
+                   <br>
+                   <div class="text-center">
+                       <a href="https://youtu.be/3irrb13bOq0" class="btn btn-primary" role="button" data-bs-toggle="button">Ver trailer</a>
+                   </div>
+               </div>
+               </div>
+           
+           </div>
+        </div>
+    }
+
+</div>
+
+@code {
+    private List<Movie> GetMovies()
+    {
+    return new List<Movie>(){
+    new Movie()
+{Nombre = "Nueva Pelicula1", Genero="Accion", Duracion="cinco", Sinopsys="un texto largo", Calificacion="cinco", Imagen="/images/img1.jpg"},
+new Movie()
+{Nombre = "Nueva Pelicula1", Genero="Drama", Duracion="50", Sinopsys="un texto largo", Calificacion="cinco", Imagen="/images/img2.jpg"},
+new Movie()
+{Nombre = "Nueva Pelicula2", Genero="Comedia", Duracion="veinti5", Sinopsys="un texto largo", Calificacion="cinco", Imagen="/images/img3.jpg"},
+new Movie()
+{Nombre = "Nueva Pelicula3", Genero="Infantil", Duracion="dos", Sinopsys="un texto largo", Calificacion="cinco", Imagen="/images/img4.jpg"},
+new Movie()
+{Nombre = "Nueva Pelicula4", Genero="Fantasia", Duracion="cinco", Sinopsys="un texto largo", Calificacion="cinco", Imagen="/images/img5.jpg"},
+new Movie()
+{Nombre = "Nueva Pelicula5", Genero="Terror", Duracion="cinco", Sinopsys="un texto largo", Calificacion="cinco", Imagen="/images/img6.jpg"},
+new Movie()
+{Nombre = "Nueva Pelicula7", Genero="Anime", Duracion="cinco", Sinopsys="un texto largo", Calificacion="cinco", Imagen="/images/img7.jpg"},
+new Movie()
+{Nombre = "Nueva Pelicula7", Genero="Anime", Duracion="cinco", Sinopsys="un texto largo", Calificacion="cinco", Imagen="/images/img7.jpg"},
+new Movie()
+{Nombre = "Nueva Pelicula7", Genero="Anime", Duracion="cinco", Sinopsys="un texto largo", Calificacion="cinco", Imagen="/images/img7.jpg"},
+new Movie()
+{Nombre = "Nueva Pelicula7", Genero="Anime", Duracion="cinco", Sinopsys="un texto largo", Calificacion="cinco", Imagen="/images/img7.jpg"}
+    };
+    }
+}
