@@ -1,8 +1,8 @@
-Dia 1 Semana 4
+Dia 1 Semana 6
 
 ***************************************************************************************************************************************************************************
 Enlace grabación reunión:
-Fecha:
+Fecha:4 de octubre
 ***************************************************************************************************************************************************************************
 Lider de proyecto:
 i.	¿Qué hizo ayer?
@@ -16,7 +16,12 @@ iii.	¿Qué dificultades ha tenido?
 ***************************************************************************************************************************************************************************
 Desarrollador Software: Olga Liliana Hernandez Mora
 i.	¿Qué hizo ayer? 
+Reunión de grupo Innova Team a las 9:30
+Creación de del formulario de crud de película
 ii.	¿Qué hará hoy? 
+Asistencia a clase
+ Reunión de grupo Innova Team a las 9:30
+Sincronización del proyecto peliculas con el repositorio del grupo en Github 
 iii.	¿Qué dificultades ha tenido? Ninguna
 ***************************************************************************************************************************************************************************
 Tester:
@@ -32,11 +37,11 @@ iii.	¿Qué dificultades ha tenido?
 
 
 
-Dia 2 Semana 4
+Dia 2 Semana 6
 
 ***************************************************************************************************************************************************************************
 Enlace grabación reunión:
-Fecha:
+Fecha: 5 de octubre
 ***************************************************************************************************************************************************************************
 Lider de proyecto:
 i.	¿Qué hizo ayer?
@@ -49,8 +54,14 @@ ii.	¿Qué hará hoy?
 iii.	¿Qué dificultades ha tenido?
 ***************************************************************************************************************************************************************************
 Desarrollador Software:Olga Liliana Hernandez Mora
-i.	¿Qué hizo ayer? 
-ii.	¿Qué hará hoy? 
+i.	¿Qué hizo ayer?
+Asistencia a clase
+ Reunión de grupo Innova Team a las 9:30 pm
+Sincronización del proyecto peliculas con el repositorio del grupo en Github
+ii.	¿Qué hará hoy?
+ Reunión de grupo Innova Team a las 9:30 pm
+Creación de las entidades relacion de muchos muchos entre películas y categorías
+Creación de las entidades relacion de muchos muchos entre películas y Actor
 iii.	¿Qué dificultades ha tenido? Ninguna por ahora
 ***************************************************************************************************************************************************************************
 Tester:
@@ -67,11 +78,11 @@ iii.	¿Qué dificultades ha tenido?
 
 
 
-dia 3 semana 4
+dia 3 semana 6
 
 ***************************************************************************************************************************************************************************
 Enlace grabación reunión:
-Fecha:
+Fecha: 6 de octubre
 ***************************************************************************************************************************************************************************
 Lider de proyecto:
 i.	¿Qué hizo ayer?
@@ -85,7 +96,15 @@ iii.	¿Qué dificultades ha tenido?
 ***************************************************************************************************************************************************************************
 Desarrollador Software: Olga Liliana Hernandez Mora
 i.	¿Qué hizo ayer?
+Reunión de grupo Innova Team a las 9:30 pm
+Creación de las entidades relacion de muchos muchos entre películas y categorías
+Creación de las entidades relacion de muchos muchos entre películas y Actor
 ii.	¿Qué hará hoy?
+Reunión de grupo Innova Team a las 9:30 pm
+Reunión de tutoría a las 9:40 am
+Asistencia a clase
+Instalación del entity Framework core
+Conección a la base de datos
 iii.	¿Qué dificultades ha tenido? Por ahora ninguna
 ***************************************************************************************************************************************************************************
 Tester:
@@ -101,11 +120,11 @@ iii.	¿Qué dificultades ha tenido? Ninguna
 
 
 
-dia 4 Semana 4
+dia 4 Semana 6
 
 ***************************************************************************************************************************************************************************
 Enlace grabación reunión:
-Fecha: 
+Fecha: 7 de octubre
 ***************************************************************************************************************************************************************************
 Lider de equipo:
 i.	¿Qué hizo ayer?
@@ -119,7 +138,16 @@ iii.	¿Qué dificultades ha tenido?
 ***************************************************************************************************************************************************************************
 Desarrollador Software: Olga Liliana Hernandez Mora
 i.	¿Qué hizo ayer?
+Reunión de grupo Innova Team a las 9:30 pm
+Reunión de tutoría a las 9:40 am
+Asistencia a clase
+Instalación del entity Framework core
+Conección a la base de datos
+Diagrama base de datos
 ii.	¿Qué hará hoy?
+Reunión de grupo Innova Team a las 9:30 pm
+Coneccion a Azure Data Studio
+Edición del front-end en la página de crear actor
 iii.	¿Qué dificultades ha tenido?
 ***************************************************************************************************************************************************************************
 Tester:
@@ -136,11 +164,11 @@ iii.	¿Qué dificultades ha tenido? Ninguna
 
 
 
-Dia 5 Semana 4
+Dia 5 Semana 6
 
 ***************************************************************************************************************************************************************************
 Enlace grabación reunión:
-Fecha: 
+Fecha: 8 de octubre
 ***************************************************************************************************************************************************************************
 Lider de equipo:
 i.	¿Qué hizo ayer?
@@ -154,7 +182,13 @@ iii.	¿Qué dificultades ha tenido?
 ***************************************************************************************************************************************************************************
 Desarrollador Software:Olga Liliana Hernandez Mora
 i.	¿Qué hizo ayer?
+Reunión de grupo Innova Team a las 9:30 pm
+Coneccion a Azure Data Studio
+Edición del front-end en la página de crear actor
 ii.	¿Qué hará hoy?
+Reunión de grupo Innova Team a las 9:30 pm
+Asistencia a clase
+Crud Paso A Paso Crear Categoría
 iii.	¿Qué dificultades ha tenido?
 ***************************************************************************************************************************************************************************
 Tester:
